@@ -1,16 +1,17 @@
-# This is a sample Python script.
+import cryptocode
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+def encryptor(password,username):
+  str_encoded = cryptocode.encrypt(password, username)
+  print('Success!')
+  print(str_encoded)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+encryptor('test', 'itoc')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+def decryptor(password, username):
+  str_decoded = cryptocode.decrypt(password, username)
+  print('Success!')
+  print(str_decoded)
+
+decryptor('sjoQiw==*6ZimfHrY9HUxCySi2hzkKA==*vDCkTKVgOK0ukyQyXYq3hg==*1BuhkAfKx7Qf2AmQDeUj4A==', 'itoc')
