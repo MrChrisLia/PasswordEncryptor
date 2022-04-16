@@ -1,5 +1,3 @@
-from wsgiref import headers
-
 import cryptocode
 import sqlite3
 import requests
@@ -24,21 +22,18 @@ from tkinter import messagebox
 # cursor.execute("SELECT * FROM passwords WHERE website=:w", {"w": "QF1"})
 # account_search = cursor.fetchall()
 # print(account_search)
-# Basic Jira Authentication
 
-# auth_key = base64.b64encode(b"christopher.lia@luanta.com.tw:Tatsz4c9KZdjiFvaf4Bc4B09").decode("ascii")
-# header = {"Authorization": "Basic " + auth_key}
-# response = requests.get("https://asiasupport247.atlassian.net/", headers=header)
-# print(response.status_code)
 
 # Main Window
 root = Tk()
 root.title('Password Vault 1.0')
 root.geometry("500x400")
 
+
 def clear():
     my_text.delete(1.0, END)
     my_entry.delete(0, END)
+
 
 def encrypt():
     secret = my_text.get(1.0, END)
