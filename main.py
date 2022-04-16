@@ -27,8 +27,13 @@ from tkinter import messagebox
 # Main Window
 root = Tk()
 root.title('Password Vault 1.0')
-root.geometry("500x400")
-
+screen_width = root.winfo_screenwidth()
+screen_height = root.winfo_screenheight()
+login_width = 500
+login_height = 400
+x = (screen_width / 2) - (login_width / 2)
+y = (screen_height / 2) - (login_height / 2)
+root.geometry(f'{login_width}x{login_height}+{int(x)}+{int(y)}')
 
 def clear():
     my_text.delete(1.0, END)
