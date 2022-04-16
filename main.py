@@ -35,6 +35,7 @@ x = (screen_width / 2) - (login_width / 2)
 y = (screen_height / 2) - (login_height / 2)
 root.geometry(f'{login_width}x{login_height}+{int(x)}+{int(y)}')
 
+
 def clear():
     my_text.delete(1.0, END)
     my_entry.delete(0, END)
