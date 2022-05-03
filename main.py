@@ -4,6 +4,7 @@ import requests
 import base64
 from tkinter import *
 from tkinter import messagebox
+import customtkinter
 
 # Passwords
 # passwords = [("test", "itoc", "QF1"),
@@ -25,8 +26,11 @@ from tkinter import messagebox
 
 
 # Main Window
-root = Tk()
-root.title('Password Vault 1.0')
+customtkinter.set_appearance_mode("System")
+customtkinter.set_default_color_theme("dark-blue")
+
+root = customtkinter.CTk()
+root.title('Password Vault 2.0')
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 login_width = 500
@@ -61,28 +65,28 @@ def decrypt():
         messagebox.showwarning("Error", "Incorrect Master Password!\n 主密碼不正確")
 
 
-my_frame = Frame(root)
+my_frame = customtkinter.CTkFrame(root)
 my_frame.pack(pady=20)
 
-enc_button = Button(my_frame, text="Encrypt 加密", command=encrypt)
+enc_button = customtkinter.CTkButton(my_frame, text="Encrypt 加密", command=encrypt)
 enc_button.grid(row=0, column=0)
 
-dec_button = Button(my_frame, text="Decrypt 解密", command=decrypt)
+dec_button = customtkinter.CTkButton(my_frame, text="Decrypt 解密", command=decrypt)
 dec_button.grid(row=0, column=1)
 
-clear_button = Button(my_frame, text="Clear 清除", command=clear)
+clear_button = customtkinter.CTkButton(my_frame, text="Clear 清除", command=clear)
 clear_button.grid(row=0, column=2)
 
-enc_label = Label(root, text='Enter Text Here \n 在此输入文字')
+enc_label = customtkinter.CTkLabel(root, text='Enter Text Here \n 在此输入文字')
 enc_label.pack()
 
 my_text = Text(root, width=57, height=10)
 my_text.pack(pady=10)
 
-password_label = Label(root, text="Enter Master Password \n 輸入主密碼")
+password_label = customtkinter.CTkLabel(root, text="Enter Master Password \n 輸入主密碼")
 password_label.pack()
 
-my_entry = Entry(root, width=35, show="*")
+my_entry = customtkinter.CTkEntry(root, width=200, show="*")
 my_entry.pack(pady=10)
 
 
